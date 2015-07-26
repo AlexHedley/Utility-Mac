@@ -6,12 +6,12 @@ Mac version of [Utility](https://github.com/AlexHedley/Utility)
 
 There are the following tabs 
 * URL Encode 
+* HTML Encode/Decode
+* Guid 
 
 To Do
-* HTML Encode/Decode
 * HEX to RGB 
 * SQL Builder (IN Clause)
-* Guid 
 * JSON Pretty
 * XML Pretty
 * SQL Formatter
