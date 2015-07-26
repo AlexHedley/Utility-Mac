@@ -15,6 +15,8 @@
 		1D41C5341B64BDF100AB856B /* Utility.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1D41C5331B64BDF100AB856B /* Utility.icns */; };
 		1D41C5371B64BF6600AB856B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1D41C5361B64BF6600AB856B /* Credits.rtf */; };
 		1D41C53A1B64C1FC00AB856B /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D41C5391B64C1FC00AB856B /* Utility.m */; };
+		1DD3C3021B652443008F1349 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD3C3011B652443008F1349 /* WebKit.framework */; };
+		1DD3C3051B652B44008F1349 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 1DD3C3041B652B44008F1349 /* index.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		1D41C5361B64BF6600AB856B /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		1D41C5381B64C1FC00AB856B /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		1D41C5391B64C1FC00AB856B /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		1DD3C3011B652443008F1349 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		1DD3C3041B652B44008F1349 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD3C3021B652443008F1349 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				1D41C5121B64BDCC00AB856B /* Utility */,
+				1DD3C3031B65244F008F1349 /* Frameworks */,
 				1D41C5261B64BDCC00AB856B /* UtilityTests */,
 				1D41C5111B64BDCC00AB856B /* Products */,
 			);
@@ -126,8 +132,17 @@
 			isa = PBXGroup;
 			children = (
 				1D41C5361B64BF6600AB856B /* Credits.rtf */,
+				1DD3C3041B652B44008F1349 /* index.html */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		1DD3C3031B65244F008F1349 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DD3C3011B652443008F1349 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD3C3051B652B44008F1349 /* index.html in Resources */,
 				1D41C5341B64BDF100AB856B /* Utility.icns in Resources */,
 				1D41C51B1B64BDCC00AB856B /* Images.xcassets in Resources */,
 				1D41C51E1B64BDCC00AB856B /* MainMenu.xib in Resources */,
@@ -423,6 +439,7 @@
 				1D41C52F1B64BDCC00AB856B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D41C5301B64BDCC00AB856B /* Build configuration list for PBXNativeTarget "UtilityTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +448,7 @@
 				1D41C5321B64BDCC00AB856B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
