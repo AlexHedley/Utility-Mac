@@ -14,6 +14,7 @@
         <customObject id="Tgf-3r-MfC" customClass="Utility">
             <connections>
                 <outlet property="tvJSON" destination="dMw-vW-6PD" id="top-mR-kZe"/>
+                <outlet property="tvXML" destination="4yz-bM-yy9" id="HbG-MV-jFE"/>
                 <outlet property="txtBlue" destination="dLf-fP-jtB" id="X3E-gX-fw8"/>
                 <outlet property="txtFill" destination="40a-12-e3L" id="rb4-E1-snc"/>
                 <outlet property="txtGreen" destination="SVE-vg-idi" id="Jiy-Yn-Be1"/>
@@ -1350,11 +1351,455 @@
                                     </subviews>
                                 </view>
                             </tabViewItem>
+                            <tabViewItem label="XML" identifier="" id="PJR-5y-cgb">
+                                <view key="view" id="XlU-Sc-C7G">
+                                    <rect key="frame" x="10" y="33" width="625" height="432"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p9-fS-NaV">
+                                            <rect key="frame" x="17" y="17" width="591" height="376"/>
+                                            <clipView key="contentView" misplaced="YES" id="SOw-LA-pDw">
+                                                <rect key="frame" x="1" y="1" width="223" height="133"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textView importsGraphics="NO" baseWritingDirection="leftToRight" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="4yz-bM-yy9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <size key="minSize" width="589" height="374"/>
+                                                        <size key="maxSize" width="600" height="10000000"/>
+                                                        <attributedString key="textStorage">
+                                                            <fragment>
+                                                                <string key="content">&lt;catalog&gt;&lt;book id="bk101"&gt;&lt;author&gt;Gambardella, Matthew&lt;/author&gt;&lt;title&gt;XML Developer's Guide&lt;/title&gt;&lt;genre&gt;Computer&lt;/genre&gt;&lt;price&gt;44.95&lt;/price&gt;&lt;publish_date&gt;2000-10-01&lt;/publish_date&gt;&lt;description&gt;An in-depth look at creating applications with XML.&lt;/description&gt;&lt;/book&gt;&lt;/catalog&gt;</string>
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <font key="NSFont" size="13" name="Courier"/>
+                                                                    <real key="NSKern" value="0.0"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                                                        <tabStops/>
+                                                                    </paragraphStyle>
+                                                                    <color key="NSStrokeColor" red="0.45098039215686275" green="0.0" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <size key="minSize" width="589" height="374"/>
+                                                        <size key="maxSize" width="600" height="10000000"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </clipView>
+                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="Ziz-5E-4XU">
+                                                <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="nig-eB-LLt">
+                                                <rect key="frame" x="224" y="1" width="15" height="133"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                        </scrollView>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F9c-dC-95M">
+                                            <rect key="frame" x="525" y="392" width="89" height="32"/>
+                                            <buttonCell key="cell" type="push" title="Convert" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jLS-sW-jla">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="convertXml:" target="Tgf-3r-MfC" id="PqV-AV-XxV"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
                         </tabViewItems>
                     </tabView>
                 </subviews>
             </view>
             <point key="canvasLocation" x="366.5" y="254"/>
         </window>
+        <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="YH5-1e-dUU">
+            <rect key="frame" x="0.0" y="0.0" width="591" height="376"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <clipView key="contentView" id="v8z-Bt-WcC">
+                <rect key="frame" x="1" y="1" width="223" height="133"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="w3o-n4-tAP">
+                        <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <size key="minSize" width="589" height="374"/>
+                        <size key="maxSize" width="600" height="10000000"/>
+                        <attributedString key="textStorage">
+                            <fragment>
+                                <string key="content">{
+    </string>
+                                <attributes>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content="&quot;author&quot;">
+                                <attributes>
+                                    <color key="NSColor" red="0.7686274509803922" green="0.10196078431372549" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content=": { ">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content="&quot;name&quot;">
+                                <attributes>
+                                    <color key="NSColor" red="0.7686274509803922" green="0.10196078431372549" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content=": ">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content="&quot;Dave Eddy&quot;">
+                                <attributes>
+                                    <color key="NSColor" red="0.7686274509803922" green="0.10196078431372549" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content=", ">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content="&quot;website&quot;">
+                                <attributes>
+                                    <color key="NSColor" red="0.7686274509803922" green="0.10196078431372549" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content=": ">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content="&quot;http://www.daveeddy.com&quot;">
+                                <attributes>
+                                    <color key="NSColor" red="0.7686274509803922" green="0.10196078431372549" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment>
+                                <string key="content"> },
+    </string>
+                                <attributes>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content="&quot;numbers&quot;">
+                                <attributes>
+                                    <color key="NSColor" red="0.7686274509803922" green="0.10196078431372549" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content=": [">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content="1">
+                                <attributes>
+                                    <color key="NSColor" red="0.10980392156862745" green="0.0" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content=", ">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content="2">
+                                <attributes>
+                                    <color key="NSColor" red="0.10980392156862745" green="0.0" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content=", ">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content="3">
+                                <attributes>
+                                    <color key="NSColor" red="0.10980392156862745" green="0.0" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content=", ">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content="4">
+                                <attributes>
+                                    <color key="NSColor" red="0.10980392156862745" green="0.0" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment>
+                                <string key="content">],
+    </string>
+                                <attributes>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content="&quot;literals&quot;">
+                                <attributes>
+                                    <color key="NSColor" red="0.7686274509803922" green="0.10196078431372549" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content=": [">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content="null">
+                                <attributes>
+                                    <color key="NSColor" red="0.66666666666666663" green="0.050980392156862744" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content=", ">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content="true">
+                                <attributes>
+                                    <color key="NSColor" red="0.66666666666666663" green="0.050980392156862744" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content=", ">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment content="false">
+                                <attributes>
+                                    <color key="NSColor" red="0.66666666666666663" green="0.050980392156862744" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                            <fragment>
+                                <string key="content">]
+}</string>
+                                <attributes>
+                                    <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                    <integer key="NSLigature" value="0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                        <tabStops>
+                                            <textTab alignment="left" location="26.450000762939453"/>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <size key="minSize" width="589" height="374"/>
+                        <size key="maxSize" width="600" height="10000000"/>
+                    </textView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            </clipView>
+            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="xj4-74-TN1">
+                <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </scroller>
+            <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="O9T-4j-KVb">
+                <rect key="frame" x="224" y="1" width="15" height="133"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </scroller>
+        </scrollView>
+        <button verticalHuggingPriority="750" id="GaJ-2o-4Hd">
+            <rect key="frame" x="0.0" y="0.0" width="89" height="32"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <buttonCell key="cell" type="push" title="Convert" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AvF-jw-j9b">
+                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                <font key="font" metaFont="system"/>
+            </buttonCell>
+            <connections>
+                <action selector="convertJson:" target="Tgf-3r-MfC" id="pDF-rM-lqq"/>
+            </connections>
+        </button>
     </objects>
 </document>

@@ -28,6 +28,8 @@
     IBOutlet NSTextField *txtFill;
     
     IBOutlet NSTextView *tvJSON;
+    
+    IBOutlet NSTextView *tvXML;
 }
 
 - (IBAction)decode:(id)sender;
@@ -45,5 +47,9 @@
 - (IBAction)convertHex:(id)sender;
 
 - (IBAction)convertJson:(id)sender;
+
++ (NSString *)prettyPrintXML:(NSString *)rawXML;
+- (IBAction)convertXml:(id)sender;
+
 
 @end
