@@ -10,6 +10,8 @@
 
 @implementation Utility
 
+//#define NSColorFromRGB(rgbValue) [NSColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 #pragma mark -
 #pragma mark URL Encode/Decode
 
@@ -45,13 +47,13 @@
     NSLog(@"%@", dataEscaped);
     txtHTMLUnescape.stringValue = dataEscaped;
     
-    //[[webView mainFrame] loadHTMLString:dataEscaped baseURL:[[NSBundle mainBundle] bundleURL]];
+    [[webView mainFrame] loadHTMLString:dataEscaped baseURL:[[NSBundle mainBundle] bundleURL]];
     //NSString *html = @"<html><body><h1>Hello</h1></body></html>";
     //[webView loadHTMLString:html baseURL:nil];
-    //[webView loadHTMLString:html baseURL:[[NSBundle mainBundle] bundleURL]];
-    //[webView loadHTMLString:dataEscaped baseURL:nil];
-    //[webView loadHTMLString:dataEscaped baseURL:[[NSBundle mainBundle] bundleURL]];
-    //WebFrame
+//    [webView loadHTMLString:html baseURL:[[NSBundle mainBundle] bundleURL]];
+//    [webView loadHTMLString:dataEscaped baseURL:nil];
+//    [webView loadHTMLString:dataEscaped baseURL:[[NSBundle mainBundle] bundleURL]];
+//    WebFrame
     
 //    NSString *resourcesPath = [[NSBundle mainBundle] resourcePath];
 //    NSString *htmlPath = [resourcesPath stringByAppendingString:@"/index.html"];
@@ -97,6 +99,23 @@
     NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
     [pasteboard clearContents];
     [pasteboard setString:txtGuid.stringValue forType:NSPasteboardTypeString];
+}
+
+#pragma mark -
+#pragma mark HEX to RGB
+
+- (IBAction)convertHex:(id)sender {
+    NSString *noHashString = [txtHex.stringValue stringByReplacingOccurrencesOfString:@"#" withString:@""]; // remove the #
+    NSScanner *scanner = [NSScanner scannerWithString:noHashString];
+    unsigned hex;
+    [scanner scanHexInt: &hex];
+    [scanner setCharactersToBeSkipped:[NSCharacterSet symbolCharacterSet]]; // remove + and $
+    
+    txtRed.stringValue = [@(((float)((hex & 0xFF0000) >> 16))/255.0) stringValue];
+    txtGreen.stringValue = [@(((float)((hex & 0xFF00) >> 8))/255.0) stringValue];
+    txtBlue.stringValue = [@(((float)(hex & 0xFF))/255.0) stringValue];
+    
+    //txtFill.backgroundColor = NSColorFromRGB(txtHex.stringValue);
 }
 
 @end

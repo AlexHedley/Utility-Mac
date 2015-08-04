@@ -20,6 +20,12 @@
     
     IBOutlet NSTextField *txtZeroGuid;
     IBOutlet NSTextField *txtGuid;
+    
+    IBOutlet NSTextField *txtHex;
+    IBOutlet NSTextField *txtRed;
+    IBOutlet NSTextField *txtGreen;
+    IBOutlet NSTextField *txtBlue;
+    IBOutlet NSTextField *txtFill;
 }
 
 - (IBAction)decode:(id)sender;
@@ -33,5 +39,6 @@
 - (IBAction)generateGuid:(id)sender;
 - (IBAction)copyZeroGuid:(id)sender;
 - (IBAction)copyGuid:(id)sender;
+- (IBAction)convertHex:(id)sender;
 
 @end

@@ -13,9 +13,14 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="Tgf-3r-MfC" customClass="Utility">
             <connections>
+                <outlet property="txtBlue" destination="dLf-fP-jtB" id="X3E-gX-fw8"/>
+                <outlet property="txtFill" destination="40a-12-e3L" id="rb4-E1-snc"/>
+                <outlet property="txtGreen" destination="SVE-vg-idi" id="Jiy-Yn-Be1"/>
                 <outlet property="txtGuid" destination="YNX-gX-QEW" id="TQD-8n-ucv"/>
                 <outlet property="txtHTMLEscape" destination="d3p-eh-kWh" id="seb-MZ-usQ"/>
                 <outlet property="txtHTMLUnescape" destination="eha-Kd-3kv" id="kD3-Gt-8ac"/>
+                <outlet property="txtHex" destination="7fT-zq-Rgp" id="jVj-v3-ypF"/>
+                <outlet property="txtRed" destination="7uO-Ey-vts" id="iy6-Mg-8hr"/>
                 <outlet property="txtURLDecode" destination="L3B-pW-aG1" id="uGR-ex-tjb"/>
                 <outlet property="txtURLEncode" destination="Vrc-w8-wRZ" id="XcM-ag-mDM"/>
                 <outlet property="txtZeroGuid" destination="GXB-cD-LnF" id="SVJ-wM-nyg"/>
@@ -778,9 +783,11 @@
                                                 <action selector="unescape:" target="Tgf-3r-MfC" id="Few-Zl-Nib"/>
                                             </connections>
                                         </button>
-                                        <webView hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MYC-ez-4eC">
+                                        <webView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MYC-ez-4eC">
                                             <rect key="frame" x="17" y="17" width="400" height="83"/>
-                                            <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12"/>
+                                            <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                                                <nil key="identifier"/>
+                                            </webPreferences>
                                         </webView>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d3p-eh-kWh">
                                             <rect key="frame" x="17" y="220" width="400" height="75"/>
@@ -860,6 +867,96 @@
                                                 <action selector="copyGuid:" target="Tgf-3r-MfC" id="rJn-Ri-qav"/>
                                             </connections>
                                         </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="HEX to RGB" identifier="" id="JYY-L6-5gU">
+                                <view key="view" id="hQu-Pv-yaV">
+                                    <rect key="frame" x="10" y="33" width="434" height="298"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5Z-ri-vIK">
+                                            <rect key="frame" x="76" y="226" width="89" height="32"/>
+                                            <buttonCell key="cell" type="push" title="Convert" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hh3-pw-HUr">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="convertHex:" target="Tgf-3r-MfC" id="b4f-uL-O8w"/>
+                                            </connections>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7fT-zq-Rgp">
+                                            <rect key="frame" x="63" y="262" width="96" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="26264C" drawsBackground="YES" id="CDo-wS-svi">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SVE-vg-idi">
+                                            <rect key="frame" x="63" y="167" width="340" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="C7o-fd-znn">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dLf-fP-jtB">
+                                            <rect key="frame" x="63" y="135" width="340" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="4M8-Me-sYf">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eyR-mK-aZo">
+                                            <rect key="frame" x="12" y="265" width="33" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Hex:" id="3qM-dN-oG9">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0iF-eN-ycW">
+                                            <rect key="frame" x="15" y="202" width="33" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Red:" id="2aO-Vo-tcJ">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEd-8d-Jh0">
+                                            <rect key="frame" x="15" y="170" width="45" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Green:" id="5qS-ie-Nba">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ytL-J8-Zdc">
+                                            <rect key="frame" x="15" y="138" width="36" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Blue:" id="PKY-NX-EUa">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="40a-12-e3L">
+                                            <rect key="frame" x="167" y="262" width="30" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="WDA-jE-hcG">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7uO-Ey-vts">
+                                            <rect key="frame" x="63" y="199" width="340" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Kp4-jf-j0Z">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
                                     </subviews>
                                 </view>
                             </tabViewItem>
