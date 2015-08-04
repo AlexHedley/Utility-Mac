@@ -26,6 +26,8 @@
     IBOutlet NSTextField *txtGreen;
     IBOutlet NSTextField *txtBlue;
     IBOutlet NSTextField *txtFill;
+    
+    IBOutlet NSTextView *tvJSON;
 }
 
 - (IBAction)decode:(id)sender;
@@ -39,6 +41,9 @@
 - (IBAction)generateGuid:(id)sender;
 - (IBAction)copyZeroGuid:(id)sender;
 - (IBAction)copyGuid:(id)sender;
+
 - (IBAction)convertHex:(id)sender;
+
+- (IBAction)convertJson:(id)sender;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "Utility.h"
+#import "JSONSyntaxHighlight.h"
 
 @implementation Utility
 
@@ -116,6 +117,23 @@
     txtBlue.stringValue = [@(((float)(hex & 0xFF))/255.0) stringValue];
     
     //txtFill.backgroundColor = NSColorFromRGB(txtHex.stringValue);
+}
+
+#pragma mark -
+#pragma mark JSON Pretty Print
+
+//https://github.com/bahamas10/JSONSyntaxHighlight
+
+- (IBAction)convertJson:(id)sender {
+    NSString *jsonString = tvJSON.string;
+    id JSONObj = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:nil];
+    
+    // create the JSONSyntaxHighilight Object
+    JSONSyntaxHighlight *jsh = [[JSONSyntaxHighlight alloc] initWithJSON:JSONObj];
+    
+    // place the text into the view
+    tvJSON.string = @"\n";
+    [tvJSON insertText:[jsh highlightJSON]];
 }
 
 @end
