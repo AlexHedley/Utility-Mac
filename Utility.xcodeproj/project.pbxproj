@@ -49,6 +49,7 @@
 		1D41C5391B64C1FC00AB856B /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		1DD3C3011B652443008F1349 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1DD3C3041B652B44008F1349 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		1DEEFCB41B7788B6007D0A19 /* Utility.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Utility.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +102,7 @@
 		1D41C5121B64BDCC00AB856B /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				1DEEFCB41B7788B6007D0A19 /* Utility.entitlements */,
 				1D0AF0FF1B714BC0000CE44B /* Other */,
 				1D41C5151B64BDCC00AB856B /* AppDelegate.h */,
 				1D41C5161B64BDCC00AB856B /* AppDelegate.m */,
@@ -117,7 +119,6 @@
 		1D41C5131B64BDCC00AB856B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1D41C5331B64BDF100AB856B /* Utility.icns */,
 				1D41C5141B64BDCC00AB856B /* Info.plist */,
 				1D41C5181B64BDCC00AB856B /* main.m */,
 			);
@@ -146,6 +147,7 @@
 			children = (
 				1D41C5361B64BF6600AB856B /* Credits.rtf */,
 				1DD3C3041B652B44008F1349 /* index.html */,
+				1D41C5331B64BDF100AB856B /* Utility.icns */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -207,6 +209,12 @@
 				TargetAttributes = {
 					1D41C50F1B64BDCC00AB856B = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = K8757Q7C3B;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					1D41C5221B64BDCC00AB856B = {
 						CreatedOnToolsVersion = 6.4;
@@ -380,6 +388,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Utility/Utility.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -397,6 +407,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Utility/Utility.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

@@ -686,7 +686,7 @@
             </items>
         </menu>
         <window title="Utility" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="671" height="494"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
@@ -704,7 +704,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L3B-pW-aG1">
-                                            <rect key="frame" x="17" y="407" width="400" height="22"/>
+                                            <rect key="frame" x="17" y="407" width="522" height="22"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="http://www.alexhedley.com/" drawsBackground="YES" id="eoQ-g9-tqn">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -712,7 +712,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vrc-w8-wRZ">
-                                            <rect key="frame" x="17" y="351" width="400" height="22"/>
+                                            <rect key="frame" x="17" y="351" width="522" height="22"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="cGd-QK-Zhz">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -720,7 +720,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U2c-CK-GK9">
-                                            <rect key="frame" x="341" y="315" width="73" height="32"/>
+                                            <rect key="frame" x="541" y="345" width="73" height="32"/>
                                             <buttonCell key="cell" type="push" title="Copy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Em1-pu-hMh">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -729,24 +729,24 @@
                                                 <action selector="copyURL:" target="Tgf-3r-MfC" id="af2-5S-EDI"/>
                                             </connections>
                                         </button>
-                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dZ-uA-5fR">
-                                            <rect key="frame" x="335" y="374" width="88" height="32"/>
-                                            <buttonCell key="cell" type="push" title="Decode" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f3H-wf-TXG">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="decode:" target="Tgf-3r-MfC" id="Zhr-5h-0e3"/>
-                                            </connections>
-                                        </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O6E-rd-5NP">
-                                            <rect key="frame" x="248" y="374" width="87" height="32"/>
+                                            <rect key="frame" x="458" y="315" width="87" height="32"/>
                                             <buttonCell key="cell" type="push" title="Encode" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5n1-R9-OKz">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="encode:" target="Tgf-3r-MfC" id="dlP-Iu-vP4"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dZ-uA-5fR">
+                                            <rect key="frame" x="457" y="374" width="88" height="32"/>
+                                            <buttonCell key="cell" type="push" title="Decode" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f3H-wf-TXG">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="decode:" target="Tgf-3r-MfC" id="Zhr-5h-0e3"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -758,7 +758,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eha-Kd-3kv">
-                                            <rect key="frame" x="17" y="242" width="400" height="75"/>
+                                            <rect key="frame" x="17" y="242" width="591" height="75"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="bHA-b4-lqd">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -766,7 +766,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-vZ-gIX">
-                                            <rect key="frame" x="337" y="318" width="86" height="32"/>
+                                            <rect key="frame" x="528" y="318" width="86" height="32"/>
                                             <buttonCell key="cell" type="push" title="Escape" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gL7-Gn-Xjg">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -776,7 +776,7 @@
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="221-m1-JlS">
-                                            <rect key="frame" x="235" y="318" width="102" height="32"/>
+                                            <rect key="frame" x="512" y="206" width="102" height="32"/>
                                             <buttonCell key="cell" type="push" title="Unescape" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hdw-0T-ooQ">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -785,20 +785,20 @@
                                                 <action selector="unescape:" target="Tgf-3r-MfC" id="Few-Zl-Nib"/>
                                             </connections>
                                         </button>
-                                        <webView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MYC-ez-4eC">
-                                            <rect key="frame" x="17" y="151" width="400" height="83"/>
-                                            <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
-                                                <nil key="identifier"/>
-                                            </webPreferences>
-                                        </webView>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d3p-eh-kWh">
-                                            <rect key="frame" x="17" y="354" width="400" height="75"/>
+                                            <rect key="frame" x="17" y="354" width="591" height="75"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="&amp;lt;html&amp;gt;&amp;lt;body&amp;gt;&amp;lt;h1&amp;gt;Hello&amp;lt;/h1&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;" drawsBackground="YES" id="gqc-Sb-kef">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <webView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MYC-ez-4eC">
+                                            <rect key="frame" x="17" y="17" width="591" height="176"/>
+                                            <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                                                <nil key="identifier"/>
+                                            </webPreferences>
+                                        </webView>
                                     </subviews>
                                 </view>
                             </tabViewItem>
@@ -840,7 +840,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hg-SX-ygg">
-                                            <rect key="frame" x="306" y="351" width="73" height="32"/>
+                                            <rect key="frame" x="369" y="381" width="73" height="32"/>
                                             <buttonCell key="cell" type="push" title="Copy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rXF-jB-vbc">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -860,7 +860,7 @@
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="489-Dq-vLJ">
-                                            <rect key="frame" x="306" y="292" width="73" height="32"/>
+                                            <rect key="frame" x="369" y="322" width="73" height="32"/>
                                             <buttonCell key="cell" type="push" title="Copy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XvE-cK-nDp">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -974,7 +974,7 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="dMw-vW-6PD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="223" height="374"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <size key="minSize" width="589" height="374"/>
@@ -1039,7 +1039,7 @@
                                                                     </paragraphStyle>
                                                                 </attributes>
                                                             </fragment>
-                                                            <fragment content="&quot;Dave Eddy&quot;">
+                                                            <fragment content="&quot;Alex Hedley&quot;">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.7686274509803922" green="0.10196078431372549" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <font key="NSFont" size="11" name="Menlo-Regular"/>
@@ -1085,7 +1085,7 @@
                                                                     </paragraphStyle>
                                                                 </attributes>
                                                             </fragment>
-                                                            <fragment content="&quot;http://www.daveeddy.com&quot;">
+                                                            <fragment content="&quot;http://www.alexhedley.com&quot;">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.7686274509803922" green="0.10196078431372549" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <font key="NSFont" size="11" name="Menlo-Regular"/>
@@ -1363,7 +1363,7 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textView importsGraphics="NO" baseWritingDirection="leftToRight" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="4yz-bM-yy9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="223" height="374"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1426,7 +1426,7 @@
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="w3o-n4-tAP">
-                        <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                        <rect key="frame" x="0.0" y="0.0" width="223" height="374"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <size key="minSize" width="589" height="374"/>
