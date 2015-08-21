@@ -178,4 +178,59 @@
     tvXML.string = [Utility prettyPrintXML:tvXML.string];
 }
 
+#pragma mark -
+#pragma IN Clause
+
+- (IBAction)parseItems:(id)sender {
+    //yourTextField.text = [yourArray componentsJoinedByString:@"\n"];
+    NSArray *arr = [tvInItems.string componentsSeparatedByString:@"\n"];
+    NSMutableArray *strings = [arr mutableCopy];
+    [strings removeObject:@""];
+    NSLog(@"%@", strings);
+    //NSMutableString *parsed = [[NSMutableString alloc] init];
+    NSMutableString *parsed = [NSMutableString string];
+    NSString *wrapper = [[NSString alloc] init];
+    wrapper = [cboWraper objectValueOfSelectedItem];
+    if (wrapper == (id)[NSNull null] || wrapper.length == 0 )
+        wrapper = @"";
+    NSLog(@"%@", wrapper);
+    
+    for (NSString *itm in strings)  {
+        [parsed appendFormat:@"%@%@%@, ", wrapper, itm, wrapper];
+    }
+    
+    NSUInteger length = [parsed length];
+    NSLog(@"%lu", (unsigned long)length);
+    if (length > 0) {
+        NSString *parsedStr = [parsed substringToIndex:length-2];
+        NSLog(@"parsed %@", parsedStr);
+        [parsed setString:parsedStr];
+        NSLog(@"parsed %@", parsedStr);
+    }
+    
+    //[parsed stringByAppendingFormat:@"IN (%@)", parsed];
+    //[parsed appendFormat:@"IN (%@)", parsed];
+    [parsed setString:[NSString stringWithFormat:@"IN (%@)", parsed]];
+    
+    NSLog(@"%@", parsed);
+    tvParsedItems.string = parsed;
+}
+
+- (IBAction)copyItems:(id)sender {
+    NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+    [pasteboard clearContents];
+    [pasteboard setString:tvParsedItems.string forType:NSPasteboardTypeString];
+}
+
+#pragma mark -
+#pragma Menu Item
+
+- (IBAction)createIssue:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@kNewIssueURL]];
+}
+
+- (IBAction)visitWebsite:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@kWebsiteURL]];
+}
+
 @end

@@ -10,6 +10,9 @@
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
 
+#define kNewIssueURL "https://github.com/AlexHedley/Utility-Mac/issues/new"
+#define kWebsiteURL "http://www.alexhedley.com/apps/mac/Utility/"
+
 @interface Utility : NSObject {
     IBOutlet NSTextField *txtURLDecode;
     IBOutlet NSTextField *txtURLEncode;
@@ -30,6 +33,10 @@
     IBOutlet NSTextView *tvJSON;
     
     IBOutlet NSTextView *tvXML;
+    
+    IBOutlet NSTextView *tvInItems;
+    IBOutlet NSComboBox *cboWraper;
+    IBOutlet NSTextView *tvParsedItems;
 }
 
 - (IBAction)decode:(id)sender;
@@ -51,5 +58,10 @@
 + (NSString *)prettyPrintXML:(NSString *)rawXML;
 - (IBAction)convertXml:(id)sender;
 
+- (IBAction)parseItems:(id)sender;
+- (IBAction)copyItems:(id)sender;
+
+- (IBAction)createIssue:(id)sender;
+- (IBAction)visitWebsite:(id)sender;
 
 @end
