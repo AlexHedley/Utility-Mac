@@ -11,9 +11,9 @@ There are the following tabs
 * HEX to RGB 
 * JSON Pretty
 * XML Pretty
-
-To Do
 * SQL Builder (IN Clause)
+* 
+To Do
 * SQL Formatter
 
 A HELP (.help) file to further explain the tabs and functions.
