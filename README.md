@@ -12,7 +12,7 @@ There are the following tabs
 * JSON Pretty
 * XML Pretty
 * SQL Builder (IN Clause)
-* 
+
 To Do
 * SQL Formatter
 
