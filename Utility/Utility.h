@@ -37,6 +37,12 @@
     IBOutlet NSTextView *tvInItems;
     IBOutlet NSComboBox *cboWraper;
     IBOutlet NSTextView *tvParsedItems;
+    
+    IBOutlet NSTextField *txtTimestamp;
+    IBOutlet NSTextField *txtPrivateKey;
+    IBOutlet NSTextField *txtPublicKey;
+    IBOutlet NSTextView *tvCombined;
+    IBOutlet NSTextView *tvMD5;
 }
 
 - (IBAction)decode:(id)sender;
@@ -63,5 +69,7 @@
 
 - (IBAction)createIssue:(id)sender;
 - (IBAction)visitWebsite:(id)sender;
+
+- (IBAction)hash:(id)sender;
 
 @end

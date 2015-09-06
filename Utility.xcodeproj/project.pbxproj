@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D0AF1021B714BD1000CE44B /* JSONSyntaxHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AF1011B714BD1000CE44B /* JSONSyntaxHighlight.m */; };
+		1D18E1C31B9CA10C00C6C6B6 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E1C21B9CA10C00C6C6B6 /* NSString+MD5.m */; };
 		1D41C5171B64BDCC00AB856B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D41C5161B64BDCC00AB856B /* AppDelegate.m */; };
 		1D41C5191B64BDCC00AB856B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D41C5181B64BDCC00AB856B /* main.m */; };
 		1D41C51B1B64BDCC00AB856B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D41C51A1B64BDCC00AB856B /* Images.xcassets */; };
@@ -33,6 +34,8 @@
 /* Begin PBXFileReference section */
 		1D0AF1001B714BD1000CE44B /* JSONSyntaxHighlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONSyntaxHighlight.h; sourceTree = "<group>"; };
 		1D0AF1011B714BD1000CE44B /* JSONSyntaxHighlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONSyntaxHighlight.m; sourceTree = "<group>"; };
+		1D18E1C11B9CA10C00C6C6B6 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		1D18E1C21B9CA10C00C6C6B6 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		1D41C5101B64BDCC00AB856B /* Utility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Utility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D41C5141B64BDCC00AB856B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D41C5151B64BDCC00AB856B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,6 +79,8 @@
 			children = (
 				1D0AF1001B714BD1000CE44B /* JSONSyntaxHighlight.h */,
 				1D0AF1011B714BD1000CE44B /* JSONSyntaxHighlight.m */,
+				1D18E1C11B9CA10C00C6C6B6 /* NSString+MD5.h */,
+				1D18E1C21B9CA10C00C6C6B6 /* NSString+MD5.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 			files = (
 				1D41C5191B64BDCC00AB856B /* main.m in Sources */,
 				1D0AF1021B714BD1000CE44B /* JSONSyntaxHighlight.m in Sources */,
+				1D18E1C31B9CA10C00C6C6B6 /* NSString+MD5.m in Sources */,
 				1D41C53A1B64C1FC00AB856B /* Utility.m in Sources */,
 				1D41C5171B64BDCC00AB856B /* AppDelegate.m in Sources */,
 			);

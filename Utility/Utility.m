@@ -9,10 +9,18 @@
 #import "Utility.h"
 #import "JSONSyntaxHighlight.h"
 #import <libxml/tree.h>
+#import "NSString+MD5.h"
 
 @implementation Utility
 
 //#define NSColorFromRGB(rgbValue) [NSColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+-(void)awakeFromNib {
+    NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
+    NSNumber *timeStampObj = [NSNumber numberWithDouble: timeStamp];
+    NSLog(@"%@", timeStampObj);
+    txtTimestamp.stringValue = [timeStampObj stringValue];
+}
 
 #pragma mark -
 #pragma mark URL Encode/Decode
@@ -220,6 +228,17 @@
     NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
     [pasteboard clearContents];
     [pasteboard setString:tvParsedItems.string forType:NSPasteboardTypeString];
+}
+
+#pragma mark -
+#pragma MD5
+
+- (IBAction)hash:(id)sender {
+    NSString *combined = [NSString stringWithFormat:@"%@%@%@", txtTimestamp.stringValue, txtPrivateKey.stringValue, txtPublicKey.stringValue];
+    NSLog(@"combined %@: ", combined);
+    NSString *md5 = [combined MD5String]; // returns NSString of the MD5 of test
+    tvCombined.string = combined;
+    tvMD5.string = [md5 lowercaseString];
 }
 
 #pragma mark -
