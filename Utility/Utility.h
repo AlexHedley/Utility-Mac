@@ -43,6 +43,9 @@
     IBOutlet NSTextField *txtPublicKey;
     IBOutlet NSTextView *tvCombined;
     IBOutlet NSTextView *tvMD5;
+    
+    IBOutlet NSTextView *tvBinary;
+    IBOutlet NSTextView *tvText;
 }
 
 - (IBAction)decode:(id)sender;
@@ -71,5 +74,9 @@
 - (IBAction)visitWebsite:(id)sender;
 
 - (IBAction)hash:(id)sender;
+
+- (IBAction)convertBinary:(id)sender;
++ (NSString *)stringFromBinString:(NSString *)binString;
++ (NSString *)binaryToAsciiString:(NSString *)string;
 
 @end

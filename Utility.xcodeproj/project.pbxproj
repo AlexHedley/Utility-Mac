@@ -17,6 +17,7 @@
 		1D41C5341B64BDF100AB856B /* Utility.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1D41C5331B64BDF100AB856B /* Utility.icns */; };
 		1D41C5371B64BF6600AB856B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1D41C5361B64BF6600AB856B /* Credits.rtf */; };
 		1D41C53A1B64C1FC00AB856B /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D41C5391B64C1FC00AB856B /* Utility.m */; };
+		1D4714FF1BFFC2840082C86F /* Utility.help in Resources */ = {isa = PBXBuildFile; fileRef = 1D4714FE1BFFC2840082C86F /* Utility.help */; };
 		1DD3C3021B652443008F1349 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD3C3011B652443008F1349 /* WebKit.framework */; };
 		1DD3C3051B652B44008F1349 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 1DD3C3041B652B44008F1349 /* index.html */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		1D41C5361B64BF6600AB856B /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		1D41C5381B64C1FC00AB856B /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		1D41C5391B64C1FC00AB856B /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		1D4714FE1BFFC2840082C86F /* Utility.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Utility.help; sourceTree = "<group>"; };
 		1DD3C3011B652443008F1349 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1DD3C3041B652B44008F1349 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		1DEEFCB41B7788B6007D0A19 /* Utility.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Utility.entitlements; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		1D41C5351B64BF5400AB856B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1D4714FE1BFFC2840082C86F /* Utility.help */,
 				1D41C5361B64BF6600AB856B /* Credits.rtf */,
 				1DD3C3041B652B44008F1349 /* index.html */,
 				1D41C5331B64BDF100AB856B /* Utility.icns */,
@@ -209,7 +212,7 @@
 		1D41C5081B64BDCB00AB856B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Alex Hedley";
 				TargetAttributes = {
 					1D41C50F1B64BDCC00AB856B = {
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DD3C3051B652B44008F1349 /* index.html in Resources */,
+				1D4714FF1BFFC2840082C86F /* Utility.help in Resources */,
 				1D41C5341B64BDF100AB856B /* Utility.icns in Resources */,
 				1D41C51B1B64BDCC00AB856B /* Images.xcassets in Resources */,
 				1D41C51E1B64BDCC00AB856B /* MainMenu.xib in Resources */,
@@ -332,6 +336,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -405,6 +410,7 @@
 				INFOPLIST_FILE = Utility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexhedley.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -424,6 +430,7 @@
 				INFOPLIST_FILE = Utility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexhedley.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -443,6 +450,7 @@
 				);
 				INFOPLIST_FILE = UtilityTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexhedley.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Utility.app/Contents/MacOS/Utility";
 			};
@@ -459,6 +467,7 @@
 				);
 				INFOPLIST_FILE = UtilityTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexhedley.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Utility.app/Contents/MacOS/Utility";
 			};

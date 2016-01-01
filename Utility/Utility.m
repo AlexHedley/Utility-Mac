@@ -11,6 +11,8 @@
 #import <libxml/tree.h>
 #import "NSString+MD5.h"
 
+#define NSColorFromRGB(rgbValue) [NSColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @implementation Utility
 
 //#define NSColorFromRGB(rgbValue) [NSColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
@@ -18,7 +20,7 @@
 -(void)awakeFromNib {
     NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
     NSNumber *timeStampObj = [NSNumber numberWithDouble: timeStamp];
-    NSLog(@"%@", timeStampObj);
+    //NSLog(@"%@", timeStampObj);
     txtTimestamp.stringValue = [timeStampObj stringValue];
 }
 
@@ -28,14 +30,14 @@
 - (IBAction)decode:(id)sender {
     NSString *unescaped = txtURLDecode.stringValue; //@"http://www";
     NSString *escapedString = [unescaped stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
-    NSLog(@"escapedString: %@", escapedString);
+    //NSLog(@"escapedString: %@", escapedString);
     txtURLEncode.stringValue = escapedString;
 }
 
 - (IBAction)encode:(id)sender {
     NSString *escaped = txtURLEncode.stringValue; //@"http://www";
     NSString *unescapedString = [escaped stringByReplacingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
-    NSLog(@"escapedString: %@", unescapedString);
+    //NSLog(@"escapedString: %@", unescapedString);
     txtURLDecode.stringValue = unescapedString;
 }
 
@@ -54,7 +56,7 @@
     NSString *data = txtHTMLEscape.stringValue;
     CFStringRef dataEsc = CFXMLCreateStringByUnescapingEntities(NULL, (CFStringRef)data, NULL);
     NSString *dataEscaped = (__bridge NSString*)dataEsc;
-    NSLog(@"%@", dataEscaped);
+    //NSLog(@"%@", dataEscaped);
     txtHTMLUnescape.stringValue = dataEscaped;
     
     [[webView mainFrame] loadHTMLString:dataEscaped baseURL:[[NSBundle mainBundle] bundleURL]];
@@ -79,7 +81,7 @@
     NSString *data = txtHTMLUnescape.stringValue;
     CFStringRef dataUnEsc = CFXMLCreateStringByEscapingEntities(NULL, (CFStringRef)data, NULL);
     NSString * dataUnescaped = (__bridge NSString*)dataUnEsc;
-    NSLog(@"%@", dataUnescaped);
+    //NSLog(@"%@", dataUnescaped);
     txtHTMLEscape.stringValue = dataUnescaped;
 }
 
@@ -125,7 +127,7 @@
     txtGreen.stringValue = [@(((float)((hex & 0xFF00) >> 8))/255.0) stringValue];
     txtBlue.stringValue = [@(((float)(hex & 0xFF))/255.0) stringValue];
     
-    //txtFill.backgroundColor = NSColorFromRGB(txtHex.stringValue);
+    txtFill.backgroundColor = NSColorFromRGB(hex);
 }
 
 #pragma mark -
@@ -194,14 +196,14 @@
     NSArray *arr = [tvInItems.string componentsSeparatedByString:@"\n"];
     NSMutableArray *strings = [arr mutableCopy];
     [strings removeObject:@""];
-    NSLog(@"%@", strings);
+    //NSLog(@"%@", strings);
     //NSMutableString *parsed = [[NSMutableString alloc] init];
     NSMutableString *parsed = [NSMutableString string];
     NSString *wrapper = [[NSString alloc] init];
     wrapper = [cboWraper objectValueOfSelectedItem];
     if (wrapper == (id)[NSNull null] || wrapper.length == 0 )
         wrapper = @"";
-    NSLog(@"%@", wrapper);
+    //NSLog(@"%@", wrapper);
     
     for (NSString *itm in strings)  {
         [parsed appendFormat:@"%@%@%@, ", wrapper, itm, wrapper];
@@ -211,16 +213,15 @@
     NSLog(@"%lu", (unsigned long)length);
     if (length > 0) {
         NSString *parsedStr = [parsed substringToIndex:length-2];
-        NSLog(@"parsed %@", parsedStr);
+        //NSLog(@"parsed %@", parsedStr);
         [parsed setString:parsedStr];
-        NSLog(@"parsed %@", parsedStr);
+        //NSLog(@"parsed %@", parsedStr);
     }
     
     //[parsed stringByAppendingFormat:@"IN (%@)", parsed];
     //[parsed appendFormat:@"IN (%@)", parsed];
     [parsed setString:[NSString stringWithFormat:@"IN (%@)", parsed]];
-    
-    NSLog(@"%@", parsed);
+    //NSLog(@"%@", parsed);
     tvParsedItems.string = parsed;
 }
 
@@ -235,10 +236,58 @@
 
 - (IBAction)hash:(id)sender {
     NSString *combined = [NSString stringWithFormat:@"%@%@%@", txtTimestamp.stringValue, txtPrivateKey.stringValue, txtPublicKey.stringValue];
-    NSLog(@"combined %@: ", combined);
+    //NSLog(@"combined %@: ", combined);
     NSString *md5 = [combined MD5String]; // returns NSString of the MD5 of test
     tvCombined.string = combined;
     tvMD5.string = [md5 lowercaseString];
+}
+
+#pragma mark -
+#pragma Binary
+
+- (IBAction)convertBinary:(id)sender {
+    tvText.string = [Utility binaryToAsciiString:tvBinary.string];
+}
+
+//http://stackoverflow.com/questions/17295773/how-to-make-a-binary-to-string-converter-in-objective-c
++ (NSString *)stringFromBinString:(NSString *)binString {
+    NSArray *tokens = [binString componentsSeparatedByString:@" "];
+    char *chars = malloc(sizeof(char) * ([tokens count] + 1));
+    
+    for (int i = 0; i < [tokens count]; i++) {
+        const char *token_c = [[tokens objectAtIndex:i] cStringUsingEncoding:NSUTF8StringEncoding];
+        char val = (char)strtol(token_c, NULL, 2);
+        chars[i] = val;
+    }
+    chars[[tokens count]] = 0;
+    NSString *result = [NSString stringWithCString:chars
+                                          encoding:NSUTF8StringEncoding];
+    
+    free(chars);
+    return result;
+}
+
+//http://stackoverflow.com/questions/6496561/convert-string-of-binary-to-nsstring-of-text
++ (NSString *)binaryToAsciiString:(NSString *)string {
+    NSMutableString *result = [NSMutableString string];
+    const char *b_str = [string cStringUsingEncoding:NSASCIIStringEncoding];
+    char c;
+    int i = 0; /* index, used for iterating on the string */
+    int p = 7; /* power index, iterating over a byte, 2^p */
+    int d = 0; /* the result character */
+    while ((c = b_str[i])) { /* get a char */
+        if (c == ' ') { /* if it's a space, save the char + reset indexes */
+            [result appendFormat:@"%c", d];
+            p = 7; d = 0;
+        } else { /* else add its value to d and decrement
+                  * p for the next iteration */
+            if (c == '1') d += pow(2, p);
+            --p;
+        }
+        ++i;
+    } [result appendFormat:@"%c", d]; /* this saves the last byte */
+    
+    return [NSString stringWithString:result];
 }
 
 #pragma mark -
